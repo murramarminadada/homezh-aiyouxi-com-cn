@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://murramarminadada.github.io/homezh-aiyouxi-com-cn/sitemap.xml
