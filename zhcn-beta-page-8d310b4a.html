@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>九游 · 知识索引 & 资料整理</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f9fc;
+      color: #1d2b38;
+      line-height: 1.6;
+      padding: 0 1rem;
+    }
+
+    .wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0.5rem 0 3rem;
+    }
+
+    /* 顶部导航 */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 0 0.8rem;
+      border-bottom: 2px solid #cde1e9;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.4rem;
+      letter-spacing: 0.5px;
+      color: #0b5f6b;
+      background: #d7f0f5;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.8rem 1.6rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #1b5c6b;
+      font-size: 0.95rem;
+      font-weight: 500;
+      padding: 0.25rem 0.1rem;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      border-bottom-color: #2b9aa8;
+      color: #04343d;
+    }
+
+    /* hero */
+    .hero {
+      margin: 2.8rem 0 2.2rem;
+      background: linear-gradient(145deg, #e2f3f7 0%, #cde9ef 100%);
+      border-radius: 28px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 4px 12px rgba(25, 110, 120, 0.08);
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: #033b44;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 680px;
+      color: #1c4b56;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero .tagline {
+      background: rgba(255,255,255,0.55);
+      display: inline-block;
+      padding: 0.2rem 1.5rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #075662;
+      border: 1px solid #b5dae3;
+    }
+
+    /* 核心介绍——网格卡片 */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      padding: 1.6rem 1.3rem;
+      box-shadow: 0 2px 12px rgba(30, 100, 110, 0.06);
+      border-left: 4px solid #50b7c4;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      color: #0b5a66;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #2a4450;
+    }
+
+    .card .badge {
+      background: #daf0f5;
+      color: #0b5f6b;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      margin-left: 0.3rem;
+      font-weight: 500;
+    }
+
+    /* 三个场景模块 */
+    .scene-section {
+      margin: 3rem 0 2.5rem;
+    }
+
+    .scene-section h2 {
+      font-size: 1.6rem;
+      font-weight: 550;
+      color: #0b4c58;
+      border-left: 5px solid #40a9b8;
+      padding-left: 1rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .scene-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+
+    .scene-item {
+      background: #ffffffd9;
+      backdrop-filter: blur(2px);
+      flex: 1 1 180px;
+      min-width: 140px;
+      padding: 1.5rem 1rem;
+      border-radius: 24px;
+      box-shadow: 0 2px 6px rgba(10, 80, 90, 0.06);
+      border: 1px solid #cbe2e9;
+      transition: background 0.25s, border-color 0.2s;
+    }
+
+    .scene-item:hover {
+      background: white;
+      border-color: #7fc0ce;
+    }
+
+    .scene-item h4 {
+      font-size: 1.1rem;
+      color: #104e5b;
+      margin-bottom: 0.5rem;
+    }
+
+    .scene-item p {
+      font-size: 0.9rem;
+      color: #2a4a57;
+    }
+
+    .scene-item .icon-em {
+      font-size: 1.4rem;
+      display: inline-block;
+      margin-bottom: 0.2rem;
+    }
+
+    /* 常见说明 / FAQ 摘要 */
+    .faq-mini {
+      margin: 2.8rem 0 2rem;
+      background: #e7f4f8;
+      border-radius: 30px;
+      padding: 2rem 1.8rem;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.4rem;
+      font-weight: 550;
+      color: #074a56;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      margin-bottom: 1rem;
+      border-bottom: 1px dashed #b3cfd9;
+      padding-bottom: 0.8rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      color: #11515e;
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+    }
+
+    .faq-a {
+      color: #1e4b57;
+      font-size: 0.92rem;
+      padding-left: 0.2rem;
+    }
+
+    .faq-a a {
+      color: #117283;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #5bb5c4;
+      font-weight: 500;
+    }
+
+    .faq-a a:hover {
+      color: #043d49;
+    }
+
+    /* 底部 */
+    .footer-note {
+      margin: 2.5rem 0 1.2rem;
+      text-align: center;
+      color: #3f6b76;
+      font-size: 0.85rem;
+      border-top: 1px solid #cfe3ea;
+      padding-top: 1.8rem;
+    }
+
+    .footer-note a {
+      color: #0f6675;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* 移动端 */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        margin-top: 0.2rem;
+        width: 100%;
+        justify-content: flex-start;
+      }
+      .scene-cards {
+        flex-direction: column;
+      }
+      .scene-item {
+        flex: 1 1 auto;
+      }
+      .faq-mini {
+        padding: 1.5rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero {
+        padding: 1.8rem 1rem;
+      }
+      .card {
+        padding: 1.2rem 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <!-- 顶部导航 -->
+  <div class="nav">
+    <span class="nav-brand">📋 九游·索引</span>
+    <div class="nav-links">
+      <a href="#">整理</a>
+      <a href="#">场景</a>
+      <a href="#">说明</a>
+      <a href="#">资料</a>
+    </div>
+  </div>
+
+  <!-- hero 区域 -->
+  <div class="hero">
+    <h1>资料整理 · 信息索引</h1>
+    <p>从结构化的角度梳理 <a href="https://zhcn-beta-jiuyou.com" style="color:#033b44; text-decoration: underline; text-underline-offset: 3px;">九游</a> 相关内容 —— 围绕知识分类、使用场景和常见疑问，建立一个轻量但清晰的导航式介绍页。</p>
+    <span class="tagline">🔍 基于知识索引 · 非官方资料页</span>
+  </div>
+
+  <!-- 核心介绍网格 -->
+  <div class="intro-grid">
+    <div class="card">
+      <h3>📌 内容归类 <span class="badge">结构化</span></h3>
+      <p>将分散的说明、功能模块和参考信息按主题聚合，方便快速定位感兴趣的段落，而非逐页浏览。</p>
+    </div>
+    <div class="card">
+      <h3>⚓ 场景映射 <span class="badge">实用性</span></h3>
+      <p>每个场景卡片提炼典型使用情境，帮助理解不同功能或内容在真实操作中扮演的角色。</p>
+    </div>
+    <div class="card">
+      <h3>📖 常见说明摘要</h3>
+      <p>FAQ 部分选取典型问题与解释，避免碎片化信息堆砌，用简洁问答提供参考。</p>
+    </div>
+    <div class="card">
+      <h3>🧩 持续补充</h3>
+      <p>索引页本身可随信息更新迭代，适配新的资料整理需求，保持页面生命力。</p>
+    </div>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <div class="scene-section">
+    <h2>三个典型应用场景</h2>
+    <div class="scene-cards">
+      <div class="scene-item">
+        <div class="icon-em">🔎</div>
+        <h4>资料查阅</h4>
+        <p>当需要快速了解某项功能或概念时，通过分类卡片定位对应解释，减少在多个页面间跳转。</p>
+      </div>
+      <div class="scene-item">
+        <div class="icon-em">🧭</div>
+        <h4>场景引导</h4>
+        <p>新接触者可通过场景模块理解工具的常见用途，建立整体认知后再深入细节。</p>
+      </div>
+      <div class="scene-item">
+        <div class="icon-em">📂</div>
+        <h4>信息整理</h4>
+        <p>将零散的笔记、文档片段整合为有结构的摘要，适合个人知识库或团队参考页。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 / 常见说明 -->
+  <div class="faq-mini">
+    <h2>常见说明 / FAQ 摘要</h2>
+    <div class="faq-item">
+      <span class="faq-q">▪ 这个索引页和官方站点的关系？</span>
+      <div class="faq-a">本页是基于公开资料整理的知识型介绍，侧重信息结构而非功能复述。相关原始内容可参考 <a href="https://zhcn-beta-jiuyou.com">九游</a> 站点内的具体页面。</div>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">▪ 场景卡片是否覆盖所有功能？</span>
+      <div class="faq-a">不追求面面俱到，而是提炼三个有代表性的切入角度，帮助新用户建立初步框架。更多细节建议直接查阅对应版块。</div>
+    </div>
+    <div class="faq-item">
+      <span class="faq-q">▪ 页面信息是否保持实时同步？</span>
+      <div class="faq-a">索引内容依据发布时的理解整理，若官方结构变化，可手动更新卡片与说明。建议定期核对 <a href="https://zhcn-beta-jiuyou.com">九游</a> 获取最新信息。</div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    <span>基于公开信息整理 · 非官方页面 · 内容仅供参考 · </span>
+    <a href="https://zhcn-beta-jiuyou.com">九游</a>
+    <span> · 2025</span>
+  </div>
+</div>
+</body>
+</html>
