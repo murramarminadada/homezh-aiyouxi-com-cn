@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百家乐 · 站点介绍与可信说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f0f2f5;
+            color: #2d3a4a;
+            line-height: 1.7;
+            padding: 2rem 1rem;
+        }
+        .page-wrap {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* hero 区 — 非大图压顶，靠文字与留白 */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 2.8rem 2.2rem;
+            margin-bottom: 2.2rem;
+            box-shadow: 0 6px 18px -10px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0,0,0,0.02);
+            border: 1px solid #e9edf2;
+            transition: all 0.2s;
+        }
+        .hero h1 {
+            font-size: 1.9rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: #1f2a38;
+            margin-bottom: 0.9rem;
+        }
+        .hero p {
+            font-size: 1.05rem;
+            color: #4a5a6e;
+            max-width: 640px;
+        }
+
+        /* 通用卡片样式 */
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e4e9f0;
+            box-shadow: 0 8px 22px -12px rgba(0, 0, 0, 0.06);
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 10px 28px -14px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            font-size: 1.35rem;
+            font-weight: 550;
+            margin-bottom: 0.85rem;
+            color: #1f2a38;
+            border-left: 4px solid #809ab3;
+            padding-left: 0.9rem;
+        }
+        .card h3 {
+            font-size: 1.05rem;
+            margin: 1.2rem 0 0.4rem 0;
+            font-weight: 500;
+            color: #2b3b4f;
+        }
+
+        .card p {
+            margin-bottom: 0.9rem;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 亮点网格 */
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+            margin: 1.2rem 0 0.4rem;
+        }
+        .highlight-item {
+            background: #f7f9fc;
+            border-radius: 18px;
+            padding: 1rem 1.2rem;
+            border: 1px solid #e4eaf2;
+            font-size: 0.98rem;
+        }
+        .highlight-item strong {
+            display: block;
+            font-weight: 550;
+            color: #1e2f41;
+            margin-bottom: 0.2rem;
+        }
+
+        /* 使用场景列表 */
+        .scene-list {
+            list-style: none;
+            padding: 0;
+            margin: 0.8rem 0 0.2rem;
+        }
+        .scene-list li {
+            padding: 0.55rem 0 0.55rem 1.8rem;
+            position: relative;
+            border-bottom: 1px solid #f0f2f6;
+        }
+        .scene-list li:last-child {
+            border-bottom: none;
+        }
+        .scene-list li::before {
+            content: "›";
+            position: absolute;
+            left: 0.3rem;
+            color: #809ab3;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* faq 摘要 */
+        .faq-item {
+            margin: 1rem 0 0.2rem;
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed #dfe5ed;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #1f2e3f;
+        }
+        .faq-a {
+            color: #4b5d71;
+            margin-top: 0.15rem;
+        }
+
+        /* 提示条 */
+        .tip-box {
+            background: #f2f6fb;
+            border-left: 4px solid #7d95b0;
+            padding: 1.2rem 1.5rem;
+            border-radius: 16px;
+            margin: 1.5rem 0 0.2rem;
+            font-size: 0.98rem;
+            color: #2c4056;
+        }
+
+        /* 链接样式 — 嵌入句中 */
+        a {
+            color: #3a6182;
+            text-decoration: none;
+            border-bottom: 1px solid #d0dae6;
+            transition: border-color 0.2s, color 0.2s;
+            font-weight: 450;
+        }
+        a:hover {
+            color: #1a3a57;
+            border-bottom-color: #7d95b0;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body { padding: 1.2rem 0.8rem; }
+            .hero { padding: 1.8rem 1.2rem; }
+            .hero h1 { font-size: 1.5rem; }
+            .card { padding: 1.5rem 1.2rem; }
+            .highlight-grid { grid-template-columns: 1fr; gap: 0.9rem; }
+        }
+        @media (min-width: 1000px) {
+            .page-wrap { max-width: 880px; }
+        }
+
+        /* 小辅助 */
+        .subnote {
+            color: #6d7e91;
+            font-size: 0.92rem;
+        }
+        .mt-1 { margin-top: 0.8rem; }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero -->
+    <div class="hero">
+        <h1>关于这个站点 · 百家乐</h1>
+        <p>一份平实的产品式介绍，从背景、亮点到使用建议，帮助你更快了解 <strong>百家乐</strong> 这个方向的内容与可信边界。</p>
+    </div>
+
+    <!-- 站点摘要 + 可信说明 -->
+    <div class="card">
+        <h2>站点摘要 · 并非游戏平台</h2>
+        <p>
+            你正在查看的是 <a href="https://m--baccarat.com">百家乐</a> 的说明页。这里介绍的站点并非任何在线赌场或博彩入口，而是一个围绕「百家乐」话题的内容聚合、文化讨论与信息整理的空间。站内文章偏向规则演进、术语辨析、历史背景与策略探讨，不提供真实下注或金钱交易功能。
+        </p>
+        <p>
+            任何涉及博彩或金钱游戏的内容都受当地法律严格约束。我们坚持信息展示的克制原则，不推荐、不诱导参与实际赌博。如果你对百家乐的文化层面或纸牌逻辑感兴趣，这里或许是一个不错的起点。
+        </p>
+    </div>
+
+    <!-- 亮点卡片 -->
+    <div class="card">
+        <h2>几个值得留意的特点</h2>
+        <div class="highlight-grid">
+            <div class="highlight-item">
+                <strong>内容独立</strong>
+                所有文本均为原创整理或基于公开资料编译，不附带第三方跳转链接，也不植入推广代码。
+            </div>
+            <div class="highlight-item">
+                <strong>术语清晰</strong>
+                从「庄家」「闲家」到「自然牌」「抽水」，关键概念都有专门解释，降低理解门槛。
+            </div>
+            <div class="highlight-item">
+                <strong>无账户系统</strong>
+                站点不设用户注册、积分或排行榜，保留纯粹的阅读体验，没有数据追踪压力。
+            </div>
+            <div class="highlight-item">
+                <strong>持续迭代</strong>
+                内容会依据最新规则与文化资料进行修订，定期更新 FAQ 与阅读指引。
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用场景 / 建议 -->
+    <div class="card">
+        <h2>使用建议 · 适合哪些场景</h2>
+        <ul class="scene-list">
+            <li><strong>文化猎奇：</strong> 想了解百家乐的起源、在影视作品中的形象，或是它与概率理论的关联。</li>
+            <li><strong>规则预习：</strong> 打算阅读相关文学作品、参与桌游或单纯好奇规则，先看站点内的流程图与牌局范例。</li>
+            <li><strong>写作参考：</strong> 需要摘取百家乐的基本事实与术语定义，做非商业用途的策划或报告。</li>
+            <li><strong>风险认知：</strong> 想要清楚认识博彩业中「庄家优势」与「赌徒谬误」等概念，站点提供冷静的数值分析。</li>
+        </ul>
+        <div class="tip-box">
+            💡 建议优先浏览站点里的「规则速览」与「常见误解」栏目，它们实用性较高，也能避免被江湖传闻误导。
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 + 可信说明延伸 -->
+    <div class="card">
+        <h2>FAQ 摘要 · 克制但清晰</h2>
+        <div class="faq-item">
+            <div class="faq-q">这个站点和线上赌场有关系吗？</div>
+            <div class="faq-a">没有关系。站点本身不处理交易，不含游戏客户端，也不提供任何下注渠道。它就是一个内容站。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">为什么强调「可信但克制」？</div>
+            <div class="faq-a">因为涉及百家乐的内容很容易被夸大或神秘化。我们希望用平实的语言呈现事实，不渲染「必胜技巧」或「包赢策略」。同时明确提示风险。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">我可以在社交平台分享这里的文章吗？</div>
+            <div class="faq-a">可以。所有内容均以分享为目的，转载时注明来源即可。我们不要求反向链接，但会感谢这份尊重。</div>
+        </div>
+        <p class="subnote mt-1">
+            更多问题可以直接浏览站点内的 FAQ 专页。如果你发现信息有误或需要补充，欢迎通过页面底部的联系渠道（非本页）提出。
+        </p>
+    </div>
+
+    <!-- 最后的访问说明 / 再次嵌入链接 -->
+    <div class="card" style="margin-bottom: 0.5rem;">
+        <h2>访问说明 · 保持理性</h2>
+        <p>
+            本文所指向的网站 <a href="https://m--baccarat.com">百家乐</a> 不包含任何形式的真实货币游戏，也不收集用户的个人敏感信息。网站托管于常规静态服务，无后台数据库。请理解：任何纸牌游戏都存在概率与风险，阅读内容不等于鼓励参与。如果你或身边的人遇到赌博相关问题，建议寻求专业帮助与法律咨询。
+        </p>
+        <p style="margin-top: 0.8rem; color: #556b7d;">
+            <span style="background: #f0f4fa; padding: 0.2rem 0.6rem; border-radius: 20px; font-size: 0.9rem;">⏺ 本页为产品说明式介绍，更新于最近一次内容整合。</span>
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
